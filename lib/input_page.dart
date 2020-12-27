@@ -1,5 +1,8 @@
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'reusable_card.dart';
+import 'reusable_card_content.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -15,21 +18,35 @@ class _InputPageState extends State<InputPage> {
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
+        children: <Widget> [
           Expanded(
             child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(varyCardColor: Color(0xFF1D1E33),),
+                  child: ReusableCard(
+                    cardChild: ReusableCardContent(
+                      cardIcon: FontAwesomeIcons.mars,
+                      cardText: 'MALE',
+                    ),
+                    varyCardColor: Color(0xFF1D1E33),
+                  ),
                 ),
                 Expanded(
-                  child: ReusableCard(varyCardColor: Color(0xFF1D1E33),),
+                  child: ReusableCard(
+                    cardChild: ReusableCardContent(
+                      cardIcon: FontAwesomeIcons.venus,
+                      cardText: 'FEMALE',
+                    ),
+                    varyCardColor: Color(0xFF1D1E33),
+                  ),
                 ),
               ],
             ),
           ),
           Expanded(
-            child: ReusableCard(varyCardColor: Color(0xFF1D1E33),),
+            child: ReusableCard(
+              varyCardColor: Color(0xFF1D1E33),
+            ),
           ),
           
           Expanded(
@@ -50,22 +67,5 @@ class _InputPageState extends State<InputPage> {
   }
 }
 
-class ReusableCard extends StatelessWidget {
-  final Color varyCardColor;
-  final Widget cardIcon;
 
-  ReusableCard({@required this.varyCardColor, this.cardIcon});
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: cardIcon,
-      decoration: BoxDecoration (
-        color: varyCardColor,
-        borderRadius: BorderRadius.circular(15.0),
-      ),
-      height: 200.0,
-      width: 170.0,
-      margin: EdgeInsets.all(15.0),
-    );
-  }
-}
+
