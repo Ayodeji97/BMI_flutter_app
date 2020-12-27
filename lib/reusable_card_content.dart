@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+const cardTextStyle = TextStyle(
+  fontSize: 18.0, color: Color(0xFF8D8E98),
+);
+
 class ReusableCardContent extends StatelessWidget {
 
   final IconData cardIcon;
@@ -19,10 +23,8 @@ class ReusableCardContent extends StatelessWidget {
         SizedBox(
           height: 10.0,
         ),
-        Text(cardText, style: TextStyle(
-          fontSize: 18.0, color: Color(0xFF8D8E98),
+        Text(cardText, style: cardTextStyle
         ),
-        )
       ],
     );
   }
