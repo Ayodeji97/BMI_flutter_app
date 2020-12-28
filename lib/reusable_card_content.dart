@@ -21,7 +21,7 @@ class ReusableCardContent extends StatelessWidget {
         SizedBox(
           height: 10.0,
         ),
-        Text(cardText, style: cardTextStyle
+        Text(cardText, style: kCardTextStyle
         ),
       ],
     );
