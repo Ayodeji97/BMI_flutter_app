@@ -36,37 +36,31 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
+                  child: ReusableCard(
+                    onPress: () {
                       setState(() {
                         genderSelected = Gender.male;
                       });
-                      print('Male card was clicked');
                     },
-                    child: ReusableCard(
-                      cardChild: ReusableCardContent(
-                        cardIcon: FontAwesomeIcons.mars,
-                        cardText: 'MALE',
-                      ),
-                      varyCardColor: (genderSelected == Gender.male) ? activeCardColour : inactiveCardColour,
+                    cardChild: ReusableCardContent(
+                      cardIcon: FontAwesomeIcons.mars,
+                      cardText: 'MALE',
                     ),
+                    varyCardColor: (genderSelected == Gender.male) ? activeCardColour : inactiveCardColour,
                   ),
                 ),
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
+                  child: ReusableCard(
+                    onPress: () {
                       setState(() {
                         genderSelected = Gender.female;
                       });
-                      print('Female card was clicked');
                     },
-                    child: ReusableCard(
-                      cardChild: ReusableCardContent(
-                        cardIcon: FontAwesomeIcons.venus,
-                        cardText: 'FEMALE',
-                      ),
-                      varyCardColor: (genderSelected == Gender.female) ? activeCardColour : inactiveCardColour,
+                    cardChild: ReusableCardContent(
+                      cardIcon: FontAwesomeIcons.venus,
+                      cardText: 'FEMALE',
                     ),
+                    varyCardColor: (genderSelected == Gender.female) ? activeCardColour : inactiveCardColour,
                   ),
                 ),
               ],
