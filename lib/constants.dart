@@ -20,3 +20,8 @@ const kBottomContainerTextStyle = TextStyle(
   fontSize: 25.0,
   fontWeight: FontWeight.bold
 );
+
+const kResultPageHeadingTextStyle = TextStyle(
+  fontSize: 50.0,
+  fontWeight: FontWeight.bold
+);
