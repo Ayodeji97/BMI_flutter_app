@@ -13,12 +13,9 @@ class ResultPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
               child: Container(
                 child: Text('Your Result', style: kResultPageHeadingTextStyle,),
               ),
-            ),
           ),
 
           Expanded(
@@ -30,6 +27,12 @@ class ResultPage extends StatelessWidget {
               decoration: BoxDecoration(
                 color: kActiveCardColour,
                 borderRadius: BorderRadius.circular(15.0),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text('OVERWEIGHT', style: kResultPageCardTextStyle,)
+                ],
               ),
             ),
           ),
