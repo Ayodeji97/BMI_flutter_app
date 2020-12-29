@@ -1,4 +1,5 @@
 import 'package:bmi_calculator/constants.dart';
+import 'package:bmi_calculator/reusable_card.dart';
 import 'package:flutter/material.dart';
 import 'reusable_bottom_container.dart';
 
@@ -11,6 +12,7 @@ class ResultPage extends StatelessWidget {
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Expanded(
               child: Container(
@@ -20,26 +22,36 @@ class ResultPage extends StatelessWidget {
 
           Expanded(
             flex: 5,
-            child: Container(
-              margin: EdgeInsets.symmetric(vertical: 0.0, horizontal: 20.0),
-              height: 300.0,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: kActiveCardColour,
-                borderRadius: BorderRadius.circular(15.0),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+            child: ReusableCard(
+              varyCardColor: kActiveCardColour,
+              cardChild: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Text('OVERWEIGHT', style: kResultPageCardTextStyle,)
+                  Text(
+                    'NORMAL',
+                    style: kResultPageCardTextStyle,
+                  ),
+                  Text(
+                    '21.4',
+                    style: kBmiTextStyle,
+                  ),
+                  Text(
+                    'Your BMI is roughly in good shape! Try to eat moderately to maintain it. Thumb up!',
+                    textAlign: TextAlign.center,
+                    style: kBmiBodyTextStyle,
+                  )
                 ],
               ),
-            ),
+            )
           ),
-          ReusableBottomContainer(onTap: () {
+          ReusableBottomContainer(
+            onTap: () {
             Navigator.pop(context);
           },
+
             bottomContainerText: 'RE-CALCULATE',
+
           )
         ],
       ),

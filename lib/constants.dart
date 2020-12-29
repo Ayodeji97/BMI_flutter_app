@@ -29,5 +29,14 @@ const kResultPageHeadingTextStyle = TextStyle(
 const kResultPageCardTextStyle = TextStyle(
   fontSize: 20.0,
   fontWeight: FontWeight.w900,
-  color: Colors.green
+  color: Color(0xFF24D876),
+);
+
+const kBmiTextStyle = TextStyle(
+  fontSize: 100.0,
+  fontWeight: FontWeight.bold,
+);
+
+const kBmiBodyTextStyle = TextStyle(
+  fontSize: 22.0
 );
