@@ -1,9 +1,16 @@
 import 'package:bmi_calculator/constants.dart';
-import 'package:bmi_calculator/reusable_card.dart';
+import 'package:bmi_calculator/components/reusable_card.dart';
 import 'package:flutter/material.dart';
-import 'reusable_bottom_container.dart';
+import 'package:bmi_calculator/components/reusable_bottom_container.dart';
 
 class ResultPage extends StatelessWidget {
+
+  final String bmiResult;
+  final String resultText;
+  final String interpretation;
+
+  ResultPage({@required this.bmiResult, @required this.resultText, @required this.interpretation});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +23,12 @@ class ResultPage extends StatelessWidget {
         children: <Widget>[
           Expanded(
               child: Container(
-                child: Text('Your Result', style: kResultPageHeadingTextStyle,),
+                padding: EdgeInsets.all(15.0),
+                alignment: Alignment.bottomLeft,
+                child: Text(
+                  'Your Result',
+                  style: kResultPageHeadingTextStyle,
+                ),
               ),
           ),
 
@@ -29,17 +41,20 @@ class ResultPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    'NORMAL',
+                    bmiResult.toUpperCase(),
                     style: kResultPageCardTextStyle,
                   ),
                   Text(
-                    '21.4',
+                    resultText,
                     style: kBmiTextStyle,
                   ),
-                  Text(
-                    'Your BMI is roughly in good shape! Try to eat moderately to maintain it. Thumb up!',
-                    textAlign: TextAlign.center,
-                    style: kBmiBodyTextStyle,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      interpretation,
+                      textAlign: TextAlign.center,
+                      style: kBmiBodyTextStyle,
+                    ),
                   )
                 ],
               ),
@@ -49,9 +64,7 @@ class ResultPage extends StatelessWidget {
             onTap: () {
             Navigator.pop(context);
           },
-
             bottomContainerText: 'RE-CALCULATE',
-
           )
         ],
       ),
